@@ -27,7 +27,7 @@ app.post('/transfer', (req, res) => {
     accounts[from].balance -= amount
     accounts[to].balance = parseInt(accounts[to].balance) + parseInt(amount)
 
-    writeJSON(accounts, 'accounts.json')
+    writeJSON()
     res.render('transfer', { message: 'Transfer Completed' })
 })
 
@@ -36,7 +36,7 @@ app.post('/payment', (req, res) => {
     accounts.credit.balance -= amount
     accounts.credit.available = parseInt(accounts.credit.available) + parseInt(amount)
 
-    writeJSON(accounts, 'accounts.json')
+    writeJSON()
     res.render('payment', { message: 'Payment completed', account: accounts.credit })
 })
 

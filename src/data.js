@@ -6,9 +6,11 @@ const accounts = JSON.parse(accountData)
 const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json'), 'utf8')
 const users = JSON.parse(userData)
 
-const writeJSON = (content, filename) => {
-    const JSONcontent = JSON.stringify(content)
-    fs.writeFileSync(path.join(__dirname, 'json', filename), JSONcontent, 'utf8')
+const writeJSON = () => {
+    // const writeJSON = (content, filename) => {
+    /* The tests consider that your function works with fixed data */
+    const JSONcontent = JSON.stringify(accounts)
+    fs.writeFileSync(path.join(__dirname, 'json', 'accounts.json'), JSONcontent, 'utf8')
 }
 
 module.exports = {
